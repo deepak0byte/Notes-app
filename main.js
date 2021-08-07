@@ -1,5 +1,7 @@
  
 console.log("Welcome to notes app. This is main.js");
+
+//This Shownotes function for when we come after some time in the notes app then all notes will show.
 showNotes();
 
 // If user adds a note, add it to the localStorage
@@ -10,10 +12,11 @@ addBtn.addEventListener("click", function(e) {
   if (notes == null) {
     notesObj = [];
   } else {
-    notesObj = JSON.parse(notes);
+    notesObj = JSON.parse(notes); //Here parse() function -- convert JSON string into JavaScript object.
   }
   notesObj.push(addTxt.value);
   localStorage.setItem("notes", JSON.stringify(notesObj));
+  // Here stringify() -- convert JavaScript object into JSON string.
   addTxt.value = "";
 //   console.log(notesObj);
   showNotes();
