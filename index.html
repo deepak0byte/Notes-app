@@ -15,7 +15,7 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#" style="font-family: 'Palette Mosaic', cursive; font-size: 30px;" >NoteS</a>
+        <a class="navbar-brand" href="#" style="font-family: 'Palette Mosaic', cursive; font-size: 30px;">NoteS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,7 +24,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#" style="margin-top: 6px;" >Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#" style="margin-top: 6px;">Home <span
+                            class="sr-only">(current)</span></a>
                 </li>
 
             </ul>
@@ -36,10 +37,14 @@
         </div>
     </nav>
     <div class="container my-3">
-        <h1 style="font-family:cursive;" >Welcome To NoteS</h1>
+        <h1 style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Welcome To NoteS</h1>
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Add a note</h5>
+                <div class="mb-3">
+                    <!-- <label for="exampleInputEmail1" class="form-label">Add Title</label> -->
+                    <input type="email" class="form-control" id="title" placeholder="Add title">
+                </div>
                 <div class="form-group">
                     <textarea class="form-control" id="addTxt" rows="3"></textarea>
                 </div>
@@ -47,7 +52,7 @@
             </div>
         </div>
         <hr>
-        <h1 style="font-family:cursive;">Your Notes</h1>
+        <h1 style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Your Notes</h1>
         <hr>
         <div id="notes" class="row container-fluid"> </div>
     </div>

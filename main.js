@@ -8,16 +8,22 @@ showNotes();
 let addBtn = document.getElementById("addBtn");
 addBtn.addEventListener("click", function(e) {
   let addTxt = document.getElementById("addTxt");
+  let title = document.getElementById("title");
   let notes = localStorage.getItem("notes");
   if (notes == null) {
     notesObj = [];
   } else {
     notesObj = JSON.parse(notes); //Here parse() function -- convert JSON string into JavaScript object.
   }
-  notesObj.push(addTxt.value);
+  let obj = {
+    title:title.value,
+    text: addTxt.value
+  }
+  notesObj.push(obj);
   localStorage.setItem("notes", JSON.stringify(notesObj));
   // Here stringify() -- convert JavaScript object into JSON string.
   addTxt.value = "";
+  title.value = "";
 //   console.log(notesObj);
   showNotes();
 });
@@ -33,10 +39,10 @@ function showNotes() {
   let html = "";
   notesObj.forEach(function(element, index) {
     html += `
-            <div class="noteCard my-2 mx-2 card" style="width: 18rem;">
+            <div class="noteCard my-2 mx-2 card" style="width: 30rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Note ${index + 1}</h5>
-                        <p class="card-text"> ${element}</p>
+                        <h3 style="font-size:30px" class="card-title">${element.title}</h3>
+                        <p class="card-text"> ${element.text}</p>
                         <button id="${index}"onclick="deleteNote(this.id)" class="btn btn-primary">Delete Note</button>
                     </div>
                 </div>`;
@@ -48,7 +54,6 @@ function showNotes() {
     notesElm.innerHTML = `Nothing to show! Use "Add a Note" section above to add notes.`;
   }
 }
-
 // Function to delete a note
 function deleteNote(index) {
 //   console.log("I am deleting", index);
@@ -64,8 +69,6 @@ function deleteNote(index) {
   localStorage.setItem("notes", JSON.stringify(notesObj));
   showNotes();
 }
-
-
 let search = document.getElementById('searchTxt');
 search.addEventListener("input", function(){
 
@@ -83,3 +86,4 @@ search.addEventListener("input", function(){
         // console.log(cardTxt);
     })
 })
+
